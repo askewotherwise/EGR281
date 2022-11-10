@@ -1,5 +1,12 @@
 package edu.mtc.egr281.project11;
 
+// Natalie Askew
+// EGR 281 Project 11
+// Due Date 11/10/2022
+// Current Date 11/8/2022
+// Program that runs the game Snails Pace Race
+
+
 import java.util.Scanner;
 
 public class SnailsPaceRace {
@@ -93,6 +100,38 @@ public class SnailsPaceRace {
 		} // end if
 		
 		// Determine which snails are in last place
+		int lastPlace = 8;
+		boolean guessedALoser = false;
+		
+		// find what the last place is
+		for(int i = 0; i < SNAILS.length; ++i) {
+			
+			if(SNAILS[i].getCurrentSpace() < lastPlace) {
+				lastPlace = SNAILS[i].getCurrentSpace();
+			} // end if
+		} // end for
+		
+		// see if there is more than one snail at the last place
+		System.out.println("Snails in last place include ");
+		for(int i = 0; i < SNAILS.length; ++i) {
+			if(SNAILS[i].getCurrentSpace() == lastPlace) {
+				System.out.print(SNAILS[i].getColor() + " ");	
+				
+				if(SNAILS[i].getColor().equals(loserPrediction)) {
+					guessedALoser = true;
+				} // end if
+				
+			} // end if
+			
+		} // end for
+		System.out.println("at " + lastPlace + " place.");
+		
+		System.out.print("You guessed " + loserPrediction + " would lose ");
+		if(guessedALoser) {
+			System.out.println("and you were right!");
+		} else {
+			System.out.println("and you were wrong!");
+		}
 		
 		System.out.println("Thanks for playing!");
 		

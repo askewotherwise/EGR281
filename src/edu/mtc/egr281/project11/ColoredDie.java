@@ -1,5 +1,11 @@
 package edu.mtc.egr281.project11;
 
+//Natalie Askew
+//EGR 281 Project 11
+//Due Date 11/10/2022
+//Current Date 11/8/2022
+//Program that defines a single Colored Die object
+
 import java.util.Random;
 
 public class ColoredDie {
